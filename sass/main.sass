@@ -1,0 +1,74 @@
+@import normalize
+@import icon-font
+
+// Icon sizes
+.icon-medium
+	@extend .icon
+	font-size: 150%
+
+.icon-large
+	@extend .icon
+	font-size: 200%
+
+
+// == Making things pretty == //
+
+// Mixins 
+
+@mixin clearfix()
+	*zoom: 1
+
+	&:before,
+	&:after
+		content: " "
+		display: table
+
+	&:after
+		clear: both
+
+
+// Variables
+$roboto: 'Roboto', sans-serif
+$lato: 'Lato', sans-serif
+
+$font-color: #333
+$base-color: #f4f4fa
+
+body 
+	margin: 20px
+	background-color: $base-color
+	font-family: $roboto
+	color: $font-color
+
+h1,
+h2,
+h3
+	font-weight: 400
+	text-align: center
+
+hr
+	border: none
+	height: 0.05em
+	background-color: lighten($font-color, 50%)
+
+.font-light
+	font-family: $lato
+	font-weight: 300
+
+.icons-list
+	list-style: none
+	padding: 0
+	margin: 5em auto
+	+clearfix
+
+	li
+		float: left
+		text-align: center
+		width: (100%) / 3
+
+		@media screen and (max-width: 768px)
+			width: 100%
+			margin-bottom: 5em
+
+		.icon
+			display: block
